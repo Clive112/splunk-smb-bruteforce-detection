@@ -34,9 +34,11 @@ Detection of Repeated Failed Login Attempts
 Author: Dhlalambi Clive
 
 Overview
+
 This project demonstrates how Splunk Enterprise can be used to monitor Windows security logs and detect suspicious login activity. The lab focused on identifying multiple failed login attempts, which may indicate a possible brute-force attack.
 
 Objective
+
 The objective of this project was to:
 •	Collect Windows Security Event Logs in Splunk
 •	Simulate repeated failed login attempts in a lab environment
@@ -44,12 +46,16 @@ The objective of this project was to:
 •	Create an alert for suspicious authentication activity
 
 Tools Used
+
 •	Splunk Enterprise
 •	Windows 11
 •	Kali Linux
 •	Metasploit Framework
 
+
+
 Lab Setup
+
 The environment consisted of:
 •	A Windows 11 virtual machine running Splunk Enterprise
 •	A Kali Linux virtual machine used to simulate failed login attempts
@@ -58,6 +64,7 @@ The environment consisted of:
 
 
 Process
+
 1.	Windows Security logs were added to Splunk for monitoring.
 2.	A series of failed login attempts were generated from the Kali Linux machine against the Windows host.
 3.	Splunk was used to search for Event ID 4625, which represents failed logon attempts.
@@ -66,10 +73,13 @@ Process
 
 
 Detection Query
+
 spl
 index=* EventCode=4625
 | stats count by src_ip
 | where count > 5
+
+
 Result
 The search identified one source IP address responsible for repeated failed login attempts:
 •	Source IP: 10.0.2.15
@@ -82,9 +92,11 @@ An alert titled “Possible SMB brute force” was created to trigger when faile
 
 
 Conclusion:
+
 This lab demonstrates a simple and effective approach to detecting suspicious login activity using Splunk and Windows Security logs. It highlights the value of log monitoring and alerting in identifying early signs of brute-force behavior in a controlled security environment.
 
 Skills Demonstrated:
+
 •	Log collection and monitoring
 •	Windows event analysis
 •	Splunk search and detection
