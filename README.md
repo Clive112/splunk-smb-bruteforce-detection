@@ -14,10 +14,10 @@ This project demonstrates how Splunk Enterprise can be used to monitor Windows s
 ![Failed Login Event Search](screenshots/splunk_event_4625_search.png)
 
 #### 3. Metasploit SMB Login Setup
-![Metasploit SMB Login Setup](screenshots/metasploit_smb_login_setup.png)
+![Metasploit SMB Login Setup](screenshots/metasploit_setup.png)
 
 #### 4. Metasploit Brute Force Results
-![Metasploit Brute Force Results](screenshots/metasploit_bruteforce_results.png)
+![Metasploit Brute Force Results](screenshots/metasploit_results.png)
 
 #### 5. Splunk Detection Results
 ![Splunk Detection Results](screenshots/splunk_stats_by_src_ip.png)
