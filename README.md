@@ -30,7 +30,9 @@ This project demonstrates how Splunk Enterprise can be used to monitor Windows s
 Splunk Security Monitoring Lab Report
 
 Detection of Repeated Failed Login Attempts
+
 30/06/2026
+
 Author: Dhlalambi Clive
 
 Overview
@@ -40,10 +42,15 @@ This project demonstrates how Splunk Enterprise can be used to monitor Windows s
 Objective
 
 The objective of this project was to:
+
 •	Collect Windows Security Event Logs in Splunk
+
 •	Simulate repeated failed login attempts in a lab environment
+
 •	Detect failed logon events using Splunk
+
 •	Create an alert for suspicious authentication activity
+
 
 Tools Used
 
@@ -58,7 +65,9 @@ Lab Setup
 
 The environment consisted of:
 •	A Windows 11 virtual machine running Splunk Enterprise
+
 •	A Kali Linux virtual machine used to simulate failed login attempts
+
 •	Windows Security Event Logs configured as the log source in Splunk
 
 
@@ -74,14 +83,17 @@ Process
 
 Detection Query
 
-spl
+spl:
+
 index=* EventCode=4625
 | stats count by src_ip
 | where count > 5
 
 
 Result
+
 The search identified one source IP address responsible for repeated failed login attempts:
+
 •	Source IP: 10.0.2.15
 •	Failed Attempts: 10
 
